@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div style="min-height: 100vh;" class="shadow-md px-8 pt-6 pb-8 w-8/12 flex flex-col mx-auto bg-gray-100 mx-12 my-10 w-auto rounded-3xl text-gray-500">
+    <p>Mis contratos</p>
+    <form (ngSubmit)="agregar()" class="space-y-4">
+      <div>
+        <label for="telefono" class="block">Telefono</label>
+        <input type="text" id="telefono" [(ngModel)]="datos.telefono" name="telefono" required class="w-full px-3 py-2 border border-gray-300 rounded-md">
+      </div>
+      <div>
+        <label for="direccion" class="block">Direccion</label>
+        <input type="text" id="direccion" [(ngModel)]="datos.direccion" name="direccion" required class="w-full px-3 py-2 border border-gray-300 rounded-md">
+      </div>
+      <div>
+        <label for="mensaje" class="block">Mensaje</label>
+        <textarea id="mensaje" [(ngModel)]="datos.mensaje" name="mensaje" required class="w-full px-3 py-2 border border-gray-300 rounded-md"></textarea>
+      </div>
+      <button style="margin-right: 20px;" (click)="agregar()" [routerLink]="['/home']" type="button" class="bg-blue-500 text-white px-4 py-2 rounded-md">Contratar</button>
+      <button (click)="back()" type="button" mat-raised-button color="warn">Atras</button>
+    </form>
+</div>
+
+<app-footer style="margin-top: auto;"></app-footer>

@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div style="min-height: 100vh;" class="shadow-md px-8 pt-6 pb-8 w-8/12 flex flex-col mx-auto bg-gray-100 mx-12 my-10 w-auto rounded-3xl text-gray-500">
+    <div style="display: flex; justify-content: space-between; padding-right: 20px;">
+      <p style="font-size: 2rem; color: black;">Servicios disponibles</p>
+      <button style="background-color: #2D79EC; color: white;" class="boton-upd"  mat-button color="primary" [routerLink]="['/servicio/agregar']">Publicar un servicio</button>
+    </div>
+    
+    <div style="display: flex; padding: 20px;">
+      <p style="width: 30%; font-size: 1.4rem;">Servicio</p>
+      <p style="width: 50%; font-size: 1.4rem;">Descripción</p>
+      <p style="font-size: 1.4rem;">Precio</p>
+    </div>
+    <mat-card *ngFor="let lista of lista" style="margin-bottom: 20px; background: #662DEC;">
+
+      <mat-card-content style="display: flex; width: 100%;">
+
+        <div style="display: flex; width: 30%">
+          <p style="color: white; font-size: 1.1rem; text-transform: uppercase;">{{ lista.titulo }}</p>
+        </div>
+
+        <div style="display: flex; width: 50%">
+          <p style="color: white; font-size: 1.1rem;">{{ lista.descripcion }}</p>
+        </div>
+        
+        <div style="display: flex; width: 10%">
+          <p style="padding-right: 5px; color: white; font-size: 1.1rem;">S/.</p>
+          <p style="color: white; font-size: 1.1rem;">{{ lista.costo }}</p>
+        </div>
+
+        <button style="background-color: #FBDB6B; color: white;" class="boton-upd"  mat-button color="primary" [routerLink]="[lista.idusuario, 'contrato']">Contratar</button>
+        
+      </mat-card-content>
+    </mat-card>
+</div>
+
+<app-footer style="margin-top: auto;"></app-footer>

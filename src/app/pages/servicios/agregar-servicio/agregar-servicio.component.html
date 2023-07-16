@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div style="min-height: 60vh;" class="shadow-md px-8 pt-6 pb-8 w-8/12 flex flex-col mx-auto bg-gray-100 mx-12 my-10 w-auto rounded-3xl text-gray-500">
+    <div style="margin: 0 auto; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-100 my-10 max-w-md rounded-3xl text-gray-500">
+        <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()" #frmOrder="ngForm">
+        
+          <div>
+          <mat-form-field class="w-11/12">
+            <mat-label>Título</mat-label>
+            <input matInput autocomplete="off" formControlName="titulo">
+          </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field class="w-11/12">
+              <mat-label>Costo</mat-label>
+              <input matInput autocomplete="off" formControlName="costo" >
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field class="w-11/12">
+              <mat-label>Descripcion</mat-label>
+              <input matInput autocomplete="off" formControlName="descripcion" >
+            </mat-form-field>
+          </div>
+
+        </form>
+
+        <button mat-raised-button color="primary" (click)="save()">
+          Agregar
+        </button>
+
+        <button style="margin-top: 1rem;" mat-raised-button color="warn" (click)="back()">
+            Atras
+        </button>
+
+    </div>
+</div>
+
+<app-footer style="margin-top: auto;"></app-footer>
